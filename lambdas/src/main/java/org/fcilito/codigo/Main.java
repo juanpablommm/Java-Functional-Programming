@@ -4,6 +4,11 @@ import org.fcilito.codigo.interfacefuntional.IFunctionalInterfaceExample;
 import org.fcilito.codigo.interfacefuntional.IFunctionalInterfaceWithReturn;
 import org.fcilito.codigo.interfacefuntional.IFunctionalWithParameters;
 
+import java.util.Arrays;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
 public class Main {
 	public static void main(String[] args) {
 
