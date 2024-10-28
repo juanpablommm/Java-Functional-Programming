@@ -1,0 +1,58 @@
+
+TODO: Streams
+Los stream, son las abstracciones que nos permiten trabajar con estructuras de datos como colecciones o demas,
+de manera funcional, procesando los datos de manera secuencial o paralela, donde se facilitan las operaciones de
+filtrado, mapeo y reducción, por ejemplo, para cuando se tiene que realizar una suma de todos los elementos de una colección.
+
+Mantieniendo en lo posible al máximo el concepto de funciones puras en la programación funcional, es decir,
+se evita en lo posible el cambio o alteración de estados o varibles globales fuera del alcance,
+dado que esto puede producir errores inesperados en el código o que si se tienen procesos que se ejecutan en paralelo,
+mas de un hilo esté alrerando una varible que está siendo usada por otro; los stream, no son mutables,
+dada una operación intermedia aplicada sobre un stream, devuelve uno nuevo.
+
+Cabe recordar cómo funcionan los stream, donde básicamente tenemos un recurso desde el cual se crea el Stream,
+y tenemos dos tipos de operaciones a aplicar durante el proceso del stream, a lo cual se le conoce como estructura de proceso,
+o el pipeline del Stream, que es básicamente todo el flujo que tiene el Stream desde su creación, la aplicación de las operaciones necesarias y la obtención del resultado final:
+
+Operaciones intermedias: Las operaciones intermedias que se aplican sobre los elementos del stream, ya sea filtrar,
+mapear el tipo de dato, y demás. Estas son Lazy (Peresosas), no se ejecutan hasta que en sí, se llame a una operación terminal.
+Estas nos devuelven un nuevo stream a diferencia de las terminales.
+
+Operaciones Terminales: Estas son las que, como su nombre lo dice, terminan el Stream, de la cual ya se puede obtener un retorno
+del dato deseado o la operacion final que vamos apliciar al dato deseado, y son las que cierran el recuro del stream, para que este no
+quede abierto.
+Estas generan ya el resultado o un efecto secundario, como una colección o un valor único.
+
+TODO Flujo: recurso -> operaciones intermedias -> operación terminal.
+*/
+
+/*
+* TODO profundidzar mas en los metodos como flatMap y demas para las
+* collections anidaddas profundizar en los emtodos como sorted y collect,
+* entender bien las intetrfaces funcionales que estos reciben como paremtros
+*/
+
+/*TODO formas de creacion de de un Stream
+*
+* * recurso(collection, array, etc).stream() => se llama al metodo stream que se tiene de la interface Collection, por ende esta
+* presente para todas las colecciones en la jerarquia de clases que se tiene
+*
+* * Stream.of( conjunto de elementos) => se llama al metodo of() presente en la interface Stream, del cual se tiene
+* 3 variantes, uno que presenta argumentos variables para el conjunto de datos, uno que se acepta un unico dado y
+* y uno que acepta un unico dato pero es nulleable es decir que puede que el stream quede vacio.
+*
+* * Arrays.stream(Array de datos) => se llama a cualquiera de los metodos stream de la clase Array que reciben como
+* parametro el array del tipo de dato del cual se quiere sacar el stream
+*
+* * Stream.generate(condicion para crear el stream) => se crea un stream infinito, en base a una condicion que se pasa
+* como parametro, dond el parametro del meto generate es una functional interface "Supplier" cuyo metodo abstracto
+* para la implementacion de la expresion lambda, tiene un tipo generico que es el retorno, a entragrar con la lambda, no
+* resive argumentos.
+*
+* * Stream.iterate() => al igual que genetare, crea un stream infinito que itera sobre un valor inicial y aplica una función,
+* este recibe dos interfaces funcionales, teniendo dos variantes, una que proporciona el valor inical y una
+* functional interface UnaryFuntional, la cual tien 3 genericos, recibe dos parametros el metodo asbtracto y hace
+* su respectivo retorno, los 3 parametros son del mismo tipo.
+* Su otra variante recibe una a parte de la UnaryFunctional otra functinal interface, que es el Predicate, para aplicar
+* una condicion
+* */

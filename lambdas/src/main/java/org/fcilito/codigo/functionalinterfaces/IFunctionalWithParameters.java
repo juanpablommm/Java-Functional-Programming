@@ -1,4 +1,4 @@
-package org.fcilito.codigo.interfacefuntional;
+package org.fcilito.codigo.functionalinterfaces;
 
 @FunctionalInterface
 public interface IFunctionalWithParameters {

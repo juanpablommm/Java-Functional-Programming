@@ -1,16 +1,13 @@
 package org.fcilito.codigo.exercises;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-import static java.util.stream.Stream.*;
+import static java.util.stream.Stream.of;
 
 public class ExercisesLambdas {
 
